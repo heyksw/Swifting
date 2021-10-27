@@ -62,3 +62,64 @@ class AutomaticCar : Car {
 let automatic = AutomaticCar()
 automatic.currentSpeed = 35
 print("AutomaticCar : \(automatic.description)")
+
+// 타입 캐스팅
+class MediaItem {
+    var name: String
+    init(name: String){
+        self.name = name
+    }
+}
+
+class Movie: MediaItem {
+    var director: String
+    init(name: String, director: String){
+        self.director = director
+        super.init(name: name)
+    }
+}
+
+class Song: MediaItem {
+    var artist: String
+    init(name: String, artist: String) {
+        self.artist = artist
+        super.init(name: name)
+    }
+}
+
+// 업캐스팅으로 Moive와 Song을 한 Array에 담음.
+let library: [MediaItem] = [
+    Movie(name: "기생충", director: "봉준호"),
+    Song(name: "Butter", artist: "BTS"),
+    Movie(name: "올드보이", director: "박찬욱"),
+    Song(name: "StrawberryMoon", artist: "IU")
+]
+
+var movieCount = 0
+var songCount = 0
+
+for item in library {
+    // 타입 캐스팅 is
+    if item is Movie {
+        movieCount += 1
+    }
+    else if item is Song {
+        songCount += 1
+    }
+}
+
+movieCount
+songCount
+
+// 다운 타입 캐스팅 as?
+// as! 은 절대적으로 확실할때만 사용한다.
+for item in library {
+    // MediaItem 타입의 item을 각각 Moive, Song 타입으로 다운 캐스팅 한다.
+    if let movie = item as? Movie {
+        print("Movie : \(movie.name)")
+    }
+    else if let song = item as? Song {
+        print("Song : \(song.name)")
+    }
+}
+
