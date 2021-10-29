@@ -42,3 +42,7 @@ let multiResult = someArray.reduce(1, {(result: Int, elem: Int) -> Int in return
 })
 
 print(multiResult)  // -> 120
+
+// 클로저 축약
+let multiResult2 = someArray.reduce(1) { $0 * $1 }
+print(multiResult2) // -> 120
