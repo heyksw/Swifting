@@ -7,4 +7,4 @@ struct Quote {
     let contents: String
     // 발언자
     let name: String
-}
+} 
