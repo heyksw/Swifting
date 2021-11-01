@@ -23,7 +23,8 @@ class ViewController: UIViewController {
         Quote(contents: "무릇 자기를 높이는 자는 낮아지고 자기를 낮추는 자는 높아지리라.", name: "누가복음 14:11"),
         Quote(contents: "사람이 마음으로 자기의 길을 계획할지라도 그의 걸음을 인도하시는 이는 여호와시니라", name: "잠언 16:8"),
         Quote(contents: "죽고 사는 것이 혀의 권세에 달렸나니 혀를 쓰기를 좋아하는 자는 그 열매를 먹으리라", name: "잠언 18:21"),
-        Quote(contents: "말이 많으면 허물을 면키 어려우나 그 입술을 제어하는 자는 지혜가 있느니라" , name: "잠언 10:19")
+        Quote(contents: "말이 많으면 허물을 면키 어려우나 그 입술을 제어하는 자는 지혜가 있느니라" , name: "잠언 10:19"),
+        Quote(contents: "모든 지킬만한 것보다 네 마음을 지키라 생명의 근원이 이에서 남이니라", name: "잠언 4:23")
         
     ]
     
@@ -32,19 +33,30 @@ class ViewController: UIViewController {
         
         title2.text = "랜덤 성경 명언"
         contentView.layer.cornerRadius = 20
+        
         refreshButton.layer.cornerRadius = 10
         //quoteLabel.text = "test"
         
     }
 
 
+    
+    // Touch Down 이벤트
+    @IBAction func tapButtonTouchDown(_ sender: Any) {
+        // 버튼 색상 변경
+        self.refreshButton.backgroundColor = UIColor.darkGray
+    }
+    
+    // Touch Up Inside 이벤트
     @IBAction func tapQuoteGeneratorButton(_ sender: Any) {
         let random = Int(arc4random_uniform(8))
         let quote = quotes[random]
         
         self.quoteLabel.text = quote.contents
         self.nameLabel.text = quote.name
-        
+        // 버튼 색상 변경
+        self.refreshButton.backgroundColor = UIColor.lightGray
     }
+    
 }
 
