@@ -41,8 +41,8 @@ override func viewDidLoad() {
 2. 버튼을 클릭할 때 색상이 살짝 변경되었다가 돌아오도록 설정
 Button Touch Down, Touch Up Inside 의 차이점에 대해 공부
 
-₩₩₩swift
-// Touch Down 이벤트
+```swift
+    // Touch Down 이벤트
     @IBAction func tapButtonTouchDown(_ sender: Any) {
         // 버튼 색상 변경
         self.refreshButton.backgroundColor = UIColor.darkGray
@@ -58,4 +58,4 @@ Button Touch Down, Touch Up Inside 의 차이점에 대해 공부
         // 버튼 색상 변경
         self.refreshButton.backgroundColor = UIColor.lightGray
     }
-₩₩₩
+```
