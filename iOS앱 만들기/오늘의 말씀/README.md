@@ -12,11 +12,11 @@
 
 - 활용 기술
 
-1. AutoLayout
-2. UILabel
-3. UIButton
-4. MVC 패턴
-5. swift 구조체
+  1. AutoLayout
+  2. UILabel
+  3. UIButton
+  4. MVC 패턴
+  5. swift 구조체
 </pre>
 
 
