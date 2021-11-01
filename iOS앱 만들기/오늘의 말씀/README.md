@@ -22,7 +22,7 @@
 
 ## 비판적 클론코딩 
 
-1. UIView 의 모서리 : 뷰의 모서리를 직각이 아닌 둥글게 설정
+1. UIView 의 모서리 : 뷰의 모서리를 직각이 아닌 둥글게 설정   
 layer.cornerRadius 에 대한 공부
 
 ```swift
@@ -38,7 +38,7 @@ override func viewDidLoad() {
     }
 ```
 
-2. 버튼을 클릭할 때 색상이 살짝 변경되었다가 돌아오도록 설정
+2. 버튼을 클릭할 때 색상이 살짝 변경되었다가 돌아오도록 설정   
 Button Touch Down, Touch Up Inside 의 차이점에 대해 공부
 
 ```swift
