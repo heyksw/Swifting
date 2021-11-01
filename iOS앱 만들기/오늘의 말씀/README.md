@@ -20,6 +20,19 @@
 
 ## 비판적 클론코딩 
 
-1. UIView 의 모서리를 둥글게 변경
-2. Button 의 배경 설정
+- UIView 의 모서리 : 직각 -> 둥글게
+layer.cornerRadius 에 대한 공부
+
+```swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title2.text = "랜덤 성경 명언"
+        contentView.layer.cornerRadius = 20
+        
+        refreshButton.layer.cornerRadius = 10
+        //quoteLabel.text = "test"
+        
+    }
+```
 
