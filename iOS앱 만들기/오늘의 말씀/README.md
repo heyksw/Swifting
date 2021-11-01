@@ -6,6 +6,7 @@
 ## 개발 정보
 
 <pre>
+
 - 프로그래밍 언어 : Swift   
 - 개발 환경 : XCode, Story Board
 
