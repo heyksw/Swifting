@@ -11,7 +11,6 @@
 - 개발 환경 : XCode, Story Board
 
 - 활용 기술
-
   1. AutoLayout
   2. UILabel
   3. UIButton
