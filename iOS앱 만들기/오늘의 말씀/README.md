@@ -18,7 +18,7 @@
 
 ## 비판적 클론코딩 
 
-- UIView 의 모서리 : 직각 -> 둥글게
+- UIView 의 모서리 : 직각 -> 둥글게   
 layer.cornerRadius 에 대한 공부
 
 ```swift
