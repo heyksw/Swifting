@@ -7,7 +7,7 @@
 
 앱 제목 : 오늘의 말씀
 
-프로그래밍 언어 : Swift
+프로그래밍 언어 : Swift   
 개발 환경 : XCode, Story Board
 
 활용 기술 :
