@@ -1,4 +1,4 @@
-## [오늘의 말씀] 앱 실행 화면
+## [오늘의 말씀] 앱 실행 화면 gif
 
 <img src="https://user-images.githubusercontent.com/61315014/139661062-6937b561-d0c6-4bea-a617-75cf9c346415.gif" width = "25%">
 
