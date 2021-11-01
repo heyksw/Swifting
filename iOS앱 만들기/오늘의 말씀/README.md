@@ -1,5 +1,5 @@
 ## 앱 실행 화면
-
+<img src = "![ezgif-4-fabed42084a7](https://user-images.githubusercontent.com/61315014/139661062-6937b561-d0c6-4bea-a617-75cf9c346415.gif)">
 
 
 ## 개발 정보
