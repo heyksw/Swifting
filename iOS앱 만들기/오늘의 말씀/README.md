@@ -2,6 +2,7 @@
 
 <img src="https://user-images.githubusercontent.com/61315014/139661062-6937b561-d0c6-4bea-a617-75cf9c346415.gif" width = "25%">
 
+- 리프레쉬 버튼을 누를 때마다 랜덤한 성경 말씀을 출력하는 앱
 
 ## 개발 정보
 
