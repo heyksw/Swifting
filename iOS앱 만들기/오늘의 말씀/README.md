@@ -1,6 +1,6 @@
 ## [오늘의 말씀] 앱 실행 화면
 
-<img src="https://user-images.githubusercontent.com/61315014/139661062-6937b561-d0c6-4bea-a617-75cf9c346415.gif" width = "30%">
+<img src="https://user-images.githubusercontent.com/61315014/139661062-6937b561-d0c6-4bea-a617-75cf9c346415.gif" width = "25%">
 
 
 ## 개발 정보
@@ -8,7 +8,7 @@
 프로그래밍 언어 : Swift   
 개발 환경 : XCode, Story Board
 
-활용 기술 :
+- 활용 기술
 1. AutoLayout
 2. UILabel
 3. UIButton
