@@ -26,10 +26,10 @@ override func viewDidLoad() {
         super.viewDidLoad()
         
         title2.text = "랜덤 성경 명언"
-        contentView.layer.cornerRadius = 20
         
+        // layer.cornerRadius 의 수치로 얼마나 둥글게 할 것인지 설정
+        contentView.layer.cornerRadius = 20
         refreshButton.layer.cornerRadius = 10
-        //quoteLabel.text = "test"
         
     }
 ```
