@@ -5,15 +5,18 @@
 
 ## 개발 정보
 
-프로그래밍 언어 : Swift   
-개발 환경 : XCode, Story Board
+<pre>
+- 프로그래밍 언어 : Swift   
+- 개발 환경 : XCode, Story Board
 
 - 활용 기술
+
 1. AutoLayout
 2. UILabel
 3. UIButton
 4. MVC 패턴
 5. swift 구조체
+</pre>
 
 
 ## 비판적 클론코딩 
