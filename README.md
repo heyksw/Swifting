@@ -1,4 +1,4 @@
 # 💻 🐦
 
-### [ Theory ] : Swift theory
+### [ Theory ] : 스위프트 이론
 ### [ 앱 만들기 ] : 직접 개발한 iOS 앱
