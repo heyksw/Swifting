@@ -1,6 +1,6 @@
 ## [오늘의 말씀] 앱 실행 화면 gif
 
-<img src="https://user-images.githubusercontent.com/61315014/139700623-ee536156-ef40-473b-b405-1583138b3e27.gif" width = "20%">
+<img src="https://user-images.githubusercontent.com/61315014/140076686-1a4c074e-2616-4b1d-9e15-ced1aa3e6c63.gif" width = "20%">
 
 - 리프레쉬 버튼을 누를 때마다 랜덤한 성경 말씀을 출력하는 앱
 
