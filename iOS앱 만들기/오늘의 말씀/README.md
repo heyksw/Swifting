@@ -59,3 +59,26 @@ Button Touch Down, Touch Up Inside 의 차이점에 대해 공부
         self.refreshButton.backgroundColor = UIColor.lightGray
     }
 ```
+
+### 3. Custom Font 변경
+
+```swift
+// 폰트 목록에 Gowun Batang 이 없으면 제대로 들어가지 않은 것
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        
+        
+        // guard 문으로 폰트가 잘 추가 되었는지 에러 체크
+        guard let gowun = UIFont(name: "Gowun Batang", size: 18) else {
+            print("Gowun Batang is not in UIFont")
+            return
+        }
+        
+        myTitle.font = gowun
+        quoteLabel.font = gowun
+        nameLabel.font = gowun
+        madeBy.font = gowun
+
+```
