@@ -11,8 +11,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var title2: UILabel!
+    @IBOutlet weak var myTitle: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var madeBy: UILabel!
     
     let quotes = [
         Quote(contents: "미련한 자라도 잠잠하면 지혜로운 자로 여기우고 입술을 닫히면 슬기로운 자로 여기우느니라", name: "잠언 17:28"),
@@ -31,11 +32,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title2.text = "랜덤 성경 명언"
-        contentView.layer.cornerRadius = 20
+        // 폰트 목록에 Gowun Batang 이 없으면 제대로 들어가지 않은 것
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
         
+        
+        // guard 문으로 폰트가 잘 추가 되었는지 에러 체크
+        guard let gowun = UIFont(name: "Gowun Batang", size: 18) else {
+            print("Gowun Batang is not in UIFont")
+            return
+        }
+        
+        myTitle.font = gowun
+        quoteLabel.font = gowun
+        nameLabel.font = gowun
+        madeBy.font = gowun
+        
+        contentView.layer.cornerRadius = 20
         refreshButton.layer.cornerRadius = 10
-        //quoteLabel.text = "test"
+        
+        refreshButton.setTitle("리프레쉬", for: .normal)
         
     }
 
