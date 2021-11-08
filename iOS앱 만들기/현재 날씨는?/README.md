@@ -21,7 +21,7 @@
 
 ### 국가 이름 데이터 추가
 
-<pre>
+<block>
 
 도시 이름 (ex: Seoul, Tokyo, London) 을 기반으로 한 날씨 데이터를 가져오지만, 그 도시가 어느 나라에 속해있는지도 표시하고 싶었습니다.
 Codable 프로토콜을 준수하며 json parsing 이 가능하게 하고, sys json key 에 속한 country 데이터를 가져왔습니다.
@@ -49,4 +49,4 @@ struct Sys: Codable {
 }
 ```
 
-</pre>
+</block>
