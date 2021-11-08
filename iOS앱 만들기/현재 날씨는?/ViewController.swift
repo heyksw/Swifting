@@ -10,7 +10,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
-    @IBOutlet weak var minTempLabel: UILabel!
+    @IBOutlet weak var minTempLabel: UILabel! 
     @IBOutlet weak var weatherStackView: UIStackView!
     
     override func viewDidLoad() {
