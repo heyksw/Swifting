@@ -9,6 +9,7 @@
 - Code - NavigationController Push, Pop 방식
 - Code - ViewController Present, Dismiss 방식
 
+블로그 링크 : https://velog.io/@heyksw/iOS-화면전환-구현-연습
 
 ## 개발 정보
 <pre>
