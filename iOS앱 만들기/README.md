@@ -9,6 +9,7 @@
 <pre>
 1. 오늘의 말씀 (첫 iOS 프로젝트)
  - StoryBoard, AutoLayout 의 기초를 활용한 간단한 앱
+   
 2. 현재 날씨는?
  - URLSession, CurrentWeatherAPI 을 활용한 전세계 날씨 앱
 </pre>
