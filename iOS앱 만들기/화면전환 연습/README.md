@@ -1,6 +1,6 @@
 ## 프로젝트 실행 화면 gif
 
-<img src="https://user-images.githubusercontent.com/61315014/142718380-88ed6ece-277c-49a5-baad-6ac6075c13f4.gif" width="20%">
+<img src="https://user-images.githubusercontent.com/61315014/142718380-88ed6ece-277c-49a5-baad-6ac6075c13f4.gif" width="50%">
 
 - Segueway - NavigationController Push, Pop 방식
 - Segueway - ViewController Present, Dismiss 방식
