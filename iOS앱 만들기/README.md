@@ -14,6 +14,6 @@
  - URLSession, CurrentWeatherAPI 을 활용한 전세계 날씨 앱
    
 3. 4가지 전환
- - Segueway Push, Present / Code Push, Present 방식을 연습하기 위한 토이 프로젝트
+ - Segueway Push, Present / Code Push, Present 방식과 delegate 패턴을 연습하기 위한 토이 프로젝트
 
 </pre>
