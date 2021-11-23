@@ -9,6 +9,8 @@
 - Code - NavigationController Push, Pop 방식
 - Code - ViewController Present, Dismiss 방식
 
++ delegate 패턴으로 화면간 데이터 전달, 다운캐스팅과 프로퍼티 접근으로 데이터 전달 연습
+
 블로그 링크 : https://velog.io/@heyksw/iOS-화면전환-구현-연습
 
 ## 개발 정보
