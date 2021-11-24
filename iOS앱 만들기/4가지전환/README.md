@@ -1,6 +1,6 @@
 ## 토이 프로젝트 실행 화면 gif
 
-<img src="https://user-images.githubusercontent.com/61315014/143191129-002240af-d19d-46f0-ae4a-2f7455611b6e.gif" width="50%">
+<img src="https://user-images.githubusercontent.com/61315014/143191129-002240af-d19d-46f0-ae4a-2f7455611b6e.gif" width="30%">
 
 4 가지 화면전환 방식을 적용해 연습해본 토이 프로젝트
 
