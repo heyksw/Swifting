@@ -1,5 +1,6 @@
 ## [투로나] 실행 화면 gif
 
+<img src="https://user-images.githubusercontent.com/61315014/143833746-a0e234e1-bfb4-45e1-8846-c7a579acc16f.gif" width = "20%">
 
 - Alamofire 로 서버와 소통하여 국내 확진자, 신규 확진자, 지역별 코로나 현황을 표시하는 앱
 - 블로그 링크 : https://velog.io/@heyksw/작성중2-아이폰-앱-3-투로나-투데이-코로나
