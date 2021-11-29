@@ -16,4 +16,7 @@
 3. 4가지 전환
  - Segueway Push, Present / Code Push, Present 방식과 delegate 패턴을 연습하기 위한 토이 프로젝트
 
+4. 투로나 (투데이 코로나)
+ - Alamofire 를 활용한 코로나 현황 앱
+
 </pre>
