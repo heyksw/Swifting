@@ -1,4 +1,4 @@
-# Swifting 🐦
+# Swifting 
 
 ### [ Theory ] : 스위프트 이론
 
