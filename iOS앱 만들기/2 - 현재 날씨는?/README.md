@@ -14,7 +14,8 @@
 
 1. URLSession / URLSession Task
 2. CurrentWeatherAPI / Json Parsing
-3. UIAlertController
+3. Moya   
+4. Alamofire
 
 </pre>
 
@@ -50,4 +51,14 @@ struct Sys: Codable {
 }
 ```
 
+</block>
+   
+### 5/4 리팩토링
+   
+<block>   
+
+Moya, Alamofire 방식으로 각각 getCurrentWeather 함수 작성
+getCurrentWeahterByAlamofire   
+getCurrentWeahterByAlamofire   
+    
 </block>
