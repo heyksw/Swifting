@@ -3,7 +3,8 @@
 <img src = "https://user-images.githubusercontent.com/61315014/140777737-cc660ffe-ea77-44f1-8a00-22378e5274cf.gif" width = "20%">
 
 - URLSession으로 서버와 소통하여, 전세계 도시의 날씨 정보를 출력하는 앱.   
-- 블로그 링크 : https://velog.io/@heyksw/아이폰-앱-2-현재-날씨는
+- 블로그 링크 : https://velog.io/@heyksw/아이폰-앱-2-현재-날씨는   
+- 리팩토링 후 블로그 링크 : https://velog.io/@heyksw/iOS-Moya-Alamofire-URLSession-비교
 
 ## 개발 정보
 <pre>
