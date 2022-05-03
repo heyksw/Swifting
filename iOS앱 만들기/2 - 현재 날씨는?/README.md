@@ -57,7 +57,7 @@ struct Sys: Codable {
    
 <block>   
 
-Moya, Alamofire 방식으로 각각 getCurrentWeather 함수 작성
+- Moya, Alamofire 방식으로 각각 getCurrentWeather 함수 작성   
 getCurrentWeahterByAlamofire   
 getCurrentWeahterByAlamofire   
     
