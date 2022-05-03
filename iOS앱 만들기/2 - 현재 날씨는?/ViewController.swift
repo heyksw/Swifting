@@ -1,4 +1,6 @@
 import UIKit
+import Alamofire
+import Moya
 
 class ViewController: UIViewController {
 
@@ -10,8 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var maxTempLabel: UILabel!
-    @IBOutlet weak var minTempLabel: UILabel! 
+    @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var weatherStackView: UIStackView!
+    private var url_seoul: String = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=1290787ef5eb584060b11b43e201a9fc"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,9 @@ class ViewController: UIViewController {
         self.tapButton.backgroundColor = UIColor(displayP3Red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
         
         if let cityName = self.cityNameTextField.text {
-            self.getCurrentWether(cityName: cityName)
+            //self.getCurrentWeahterByAlamofire(cityName: cityName)
+            self.getCurrentWeatherByMoya(cityName: cityName)
+            
             self.view.endEditing(true)
             // 버튼이 눌리면 키보드가 사라지도록 함.
         }
@@ -59,63 +64,97 @@ class ViewController: UIViewController {
     
     
     // API에서 현재 날씨 가져오기
-    func getCurrentWether(cityName: String) {
-        // api url 연결
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=1290787ef5eb584060b11b43e201a9fc") else
-        { print("url error")
-          return }
+    func getCurrentWeatherByURLSession(cityName: String) {
+        // 날씨 데이서 API url 연결
+        guard let url = URL(string: url_seoul) else { return }
         
+        // 1. Session Configuration 설정 + 생성
         let session = URLSession(configuration: .default)
-        // weak self
+        
+        // 2. 사용할 Task 결정하고 메소드 작성
         session.dataTask(with: url) { [weak self]
-            // Completion Handler 후행 클로저
-            // data : 서버에서 응답 받은 json 데이터
+            // Completion Handler
+            // data : 서버에서 응답 받은 데이터
             // response : http 헤더 및 상태 코드 메타 데이터
             // error : 요청 실패 에러 객체. 성공하면 nil.
             data, response, error in
-            // http status가 200번대 이면 응답받은 json 데이터를 weatherInformation 객체로 디코딩
-            // 200번대 가 아니라면 에러 상황. 응답받은 json 데이터를 에러 메시지 객체로 디코딩 함.
+            // http status 가 200번대면 성공
             let successRange = (200..<300)
-            // 데이터를 잘 받아오고, 에러가 없다면 다음 코드 수행
-            guard let data = data, error == nil else {
-                print("session error")
-                return }
+            guard let data = data, error == nil else { return }
             
-            // json 객체에서 data 유형의 인스턴스로 디코딩
             let decoder = JSONDecoder()
             
-            // response를 HTTP URLResponse 형태로 다운 캐스팅 하고,
-            // successRange에 status code를 넘겨줘서 200번대 인지 확인
+            // response 를 HTTPURLResponse 형태로 다운 캐스팅
             if let response = response as? HTTPURLResponse, successRange.contains(response.statusCode) {
-                // status code가 200번대 인 경우 (json 데이터를 성공적으로 받아왔을 경우)
-                
-                // json 을 매핑 시켜줄 사용자 정의 타입
                 guard let weatherInformation = try? decoder.decode(WeatherInformation.self, from: data) else { return }
-                // 콘솔에 데이터를 잘 받았는지 출력
-                debugPrint(weatherInformation)
                 
-                // UI 작업은 메인쓰레드에서 작업
+                // UI 작업은 메인 쓰레드에서 작업
                 DispatchQueue.main.async {
-                    // 날씨 데이터를 가져왔으면, hidden 이 풀리면서 정보를 보여주도록.
                     self?.weatherStackView.isHidden = false
-                    // configureView 함수를 통해 json 데이터를 뷰에 표시.
                     self?.configureView(weatherInformation: weatherInformation)
                 }
-            } else { // status code가 200번대 가 아닌경우 에러
-                guard let errorMessage = try? decoder.decode(ErrorMessage.self, from: data) else {return}
+            }
+            else {
+                guard let errorMessage = try? decoder.decode(ErrorMessage.self, from: data) else { return }
                 
-                // 에러 메시지를 띄우는 Alert UI 작업은 메인쓰레드에서 작업
                 DispatchQueue.main.async {
                     self?.showAlert(message: errorMessage.message)
                 }
-                
             }
-            
-            
-            
-        }.resume()  // resume 까지 해줘야 작업 실행
+        }.resume()
+        
     }
 
   
+}
+
+extension ViewController {
+
+    func getCurrentWeahterByAlamofire(cityName: String) {
+        guard let url = URL(string: url_seoul) else { return }
+        
+        AF.request(url, method: .get, parameters: [:])
+            .responseData(completionHandler: { response in
+                let decoder = JSONDecoder()
+                switch response.result {
+                case let .success(data):
+                    do {
+                        let weatherInformation = try decoder.decode(WeatherInformation.self, from: data)
+                        
+                        DispatchQueue.main.async {
+                            self.weatherStackView.isHidden = false
+                            self.configureView(weatherInformation: weatherInformation)
+                        }
+                    } catch {
+                        debugPrint(error)
+                    }
+                case let .failure(error):
+                    debugPrint(error)
+                }
+            })
+    }
+    
+}
+
+
+extension ViewController {
+    
+    func getCurrentWeatherByMoya(cityName: String) {
+        let moyaProvider = MoyaProvider<WeatherAPI>()
+        
+        moyaProvider.request(.getWeather) { (result) in
+            switch result {
+            case let .success(response):
+                guard let result = try? response.map(WeatherInformation.self) else { return }
+                DispatchQueue.main.async {
+                    self.weatherStackView.isHidden = false
+                    self.configureView(weatherInformation: result)
+                }
+            case let .failure(error):
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
 }
 
